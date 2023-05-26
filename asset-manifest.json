@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/trakovid/static/css/main.56fee142.css",
-    "main.js": "/trakovid/static/js/main.d95b09db.js",
+    "main.js": "/trakovid/static/js/main.b4b627e9.js",
     "static/js/787.76271d95.chunk.js": "/trakovid/static/js/787.76271d95.chunk.js",
     "index.html": "/trakovid/index.html",
     "main.56fee142.css.map": "/trakovid/static/css/main.56fee142.css.map",
-    "main.d95b09db.js.map": "/trakovid/static/js/main.d95b09db.js.map",
+    "main.b4b627e9.js.map": "/trakovid/static/js/main.b4b627e9.js.map",
     "787.76271d95.chunk.js.map": "/trakovid/static/js/787.76271d95.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.56fee142.css",
-    "static/js/main.d95b09db.js"
+    "static/js/main.b4b627e9.js"
   ]
 }
