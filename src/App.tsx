@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, HashRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import CreateContact from "./pages/CreateContact";
 import EditContact from "./pages/EditContact";
@@ -18,7 +18,7 @@ const queryClient = new QueryClient();
 const App: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <Router>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/edit/:id" element={<EditContact />} />
@@ -26,7 +26,7 @@ const App: React.FC = () => {
           <Route path="/graph" element={<Graph />} />
           <Route path="/map" element={<Map />} />
         </Routes>
-      </Router>
+      </HashRouter>
     </QueryClientProvider>
   );
 };
