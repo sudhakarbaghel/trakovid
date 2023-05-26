@@ -25,7 +25,7 @@ const Sidebar: React.FC = () => {
           padding: "8px",
         }}
       >
-        <Link to="/graph">
+        <Link to="/map">
           {" "}
           <span style={{ color: "blue", textDecoration: "underline" }}>
             Charts and Maps
