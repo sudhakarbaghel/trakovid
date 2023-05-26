@@ -1,46 +1,75 @@
-# Getting Started with Create React App
+# Trakovid
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Trakovid is an application that provides COVID-19 tracking features, including a map view and a graph view to visualize the data.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Interactive Map: Display a map with markers representing different countries. Clicking on a marker shows information about the total active cases, total recovered cases, and total deaths for the respective country.
 
-### `npm start`
+  ![image](https://github.com/sudhakarbaghel/trakovid/assets/88780692/592eea7b-57db-4bf1-a54c-beb4a807c49e)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Historical Graph: Visualize the historical COVID-19 cases through a line graph that represents the total number of cases over time.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+ ![image](https://github.com/sudhakarbaghel/trakovid/assets/88780692/31032111-5fa9-4364-b365-237dca89e8b5))
 
-### `npm test`
+- Contact List: Manage a list of contacts, including creating, editing, and deleting contacts. Each contact includes their first name, last name, and status.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  ![image](https://github.com/sudhakarbaghel/trakovid/assets/88780692/719dca83-1689-4f23-b0c0-2fe9943aeb9e))
 
-### `npm run build`
+## Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React: A JavaScript library for building user interfaces.
+- React Router: A routing library for React applications.
+- React Query: A data fetching and caching library for React.
+- Leaflet: An open-source JavaScript library for interactive maps.
+- Victory: A data visualization library for React.
+- Redux: A predictable state container for JavaScript apps.
+- TypeScript: A typed superset of JavaScript that compiles to plain JavaScript.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
+   git clone https://github.com/your/repo.git
+   
+2. Install the dependencies:
+   npm init
+ 
+3. Start the development server:
+   npm start
+   
+   
+## Repository Structure
 
-### `npm run eject`
+The repository is structured as follows:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- `public/`: Contains the public assets and the HTML template for the application.
+- `src/`: Contains the source code of the application.
+- `components/`: Contains reusable React components.
+- `store/`: Contains Redux store configuration and slice files.
+- `types/`: Contains TypeScript type definitions.
+- `App.tsx`: The main entry point of the application.
+- `images/`: Contains images used in the README.md file.
+- `README.md`: This file, containing information about the project.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Contributions are welcome! If you find any issues or want to suggest enhancements, please create an issue in the GitHub repository.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## License
 
-## Learn More
+The Trakovid project is licensed under the [MIT License](LICENSE).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Acknowledgements
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [Open COVID-19 Data](https://disease.sh/): The API used to fetch the COVID-19 data.
+- [Leaflet](https://leafletjs.com/): The library used for displaying interactive maps.
+- [Victory](https://formidable.com/open-source/victory/): The library used for data visualization.
+- [React Query](https://react-query.tanstack.com/): The library used for data fetching and caching.
+- [React Router](https://reactrouter.com/): The library used for routing in the React application.
+
+## Contact
+
+For any inquiries or questions, please contact [sudhakarsinghbaghel123321@gmail.com](mailto:sudhakarsinghbaghel123321@gmail.com).
+
+
+
