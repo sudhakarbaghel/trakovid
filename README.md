@@ -5,16 +5,26 @@ Trakovid is an application that provides COVID-19 tracking features, including a
 ## Features
 
 - Interactive Map: Display a map with markers representing different countries. Clicking on a marker shows information about the total active cases, total recovered cases, and total deaths for the respective country.
-
+Graph.tsx
   ![image](https://github.com/sudhakarbaghel/trakovid/assets/88780692/592eea7b-57db-4bf1-a54c-beb4a807c49e)
 
 - Historical Graph: Visualize the historical COVID-19 cases through a line graph that represents the total number of cases over time.
 
- ![image](https://github.com/sudhakarbaghel/trakovid/assets/88780692/31032111-5fa9-4364-b365-237dca89e8b5))
+ ![image](https://github.com/sudhakarbaghel/trakovid/assets/88780692/31032111-5fa9-4364-b365-237dca89e8b5))****
 
 - Contact List: Manage a list of contacts, including creating, editing, and deleting contacts. Each contact includes their first name, last name, and status.
 
   ![image](https://github.com/sudhakarbaghel/trakovid/assets/88780692/719dca83-1689-4f23-b0c0-2fe9943aeb9e))
+- Used React Query to fetch data:
+ ![image](https://github.com/sudhakarbaghel/trakovid/assets/88780692/b4ff2ab4-3a73-470f-96f6-5817ada63b3b)
+ - Used Leaflet Map:
+ ![image](https://github.com/sudhakarbaghel/trakovid/assets/88780692/873a752c-e9ea-40a7-ab7e-a347884d1319)
+ - Redux along with persisit state
+  ![image](https://github.com/sudhakarbaghel/trakovid/assets/88780692/30b817ac-31db-48b3-9080-ae45c9a7f717)
+
+
+
+   
 
 ## Technologies Used
 
