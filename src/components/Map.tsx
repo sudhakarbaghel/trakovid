@@ -3,15 +3,16 @@ import React, { useState,useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup, Tooltip } from "react-leaflet";
 import { Icon } from "leaflet";
 import { Link } from "react-router-dom";
+import { useQuery } from "react-query";
 
-function App() {
-    const [countriesData, setCountriesData] = useState([]);
+function Map() {
+    // const [countriesData, setCountriesData] = useState([]);
 
-    useEffect(() => {
-      fetch("https://disease.sh/v3/covid-19/countries")
-        .then((response) => response.json())
-        .then((data) => setCountriesData(data));
-    }, []);
+   const { data: countriesData } = useQuery("countries", async () => {
+     const response = await fetch("https://disease.sh/v3/covid-19/countries");
+     const data = await response.json();
+     return data;
+   });
 
   return (
     <div style={{ position: "relative" }}>
@@ -40,7 +41,7 @@ function App() {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
 
-        {countriesData.map((country: any) => (
+        {countriesData?.map((country: any) => (
           <Marker
             key={country.country}
             position={[country.countryInfo.lat, country.countryInfo.long]}
@@ -60,4 +61,4 @@ function App() {
     </div>
   );
 }
-export default App
+export default Map

@@ -5,11 +5,7 @@ import Sidebar from "../components/Sidebar";
 import LineGraph from "../components/Graph";
 
 const Home: React.FC = () => {
-  const lineGraphData = [
-    { x: "Label 1", y: 10 },
-    { x: "Label 2", y: 20 },
-    { x: "Label 3", y: 30 },
-  ];
+ 
 
   return (
     <div

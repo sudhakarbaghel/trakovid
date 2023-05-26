@@ -1,5 +1,4 @@
- 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import {
   VictoryChart,
@@ -7,6 +6,7 @@ import {
   VictoryAxis,
   VictoryTooltip,
 } from "victory";
+import { useQuery } from "react-query";
 
 interface LineGraphProps {}
 
@@ -16,34 +16,24 @@ interface DataPoint {
 }
 
 const Graph: React.FC<LineGraphProps> = () => {
-  const [data, setData] = useState<DataPoint[]>([]);
+  const { data } = useQuery<DataPoint[]>("historicalData", async () => {
+    const response = await fetch(
+      "https://disease.sh/v3/covid-19/historical/all?lastdays=all"
+    );
+    const data: { cases: Record<string, number> } = await response.json();
+    const historicalData = data.cases;
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://disease.sh/v3/covid-19/historical/all?lastdays=all"
-        );
-        const data: { cases: Record<string, number> } = await response.json();
-        const historicalData = data.cases;
+    const formattedData: DataPoint[] = Object.entries(historicalData).map(
+      ([date, cases]) => ({
+        x: date,
+        y: cases,
+      })
+    );
 
-        const formattedData: DataPoint[] = Object.entries(historicalData).map(
-          ([date, cases]) => ({
-            x: date,
-            y: cases,
-          })
-        );
+    return formattedData;
+  });
 
-        setData(formattedData);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  const totalCases = data.reduce(
+  const totalCases = data?.reduce(
     (total: number, dataPoint: DataPoint) => total + dataPoint.y,
     0
   );
@@ -103,7 +93,6 @@ const Graph: React.FC<LineGraphProps> = () => {
             position: "absolute",
             right: "10px",
             bottom: "-30px",
-            // boxSizing: "border-box",
             color: "white",
             background: "linear-gradient(to top, #b64442, transparent)",
           }}
@@ -116,5 +105,3 @@ const Graph: React.FC<LineGraphProps> = () => {
 };
 
 export default Graph;
-
-
