@@ -4,6 +4,7 @@ import { deleteContact } from "../store/contactSlice";
 import { RootState } from "../store/store";
 import { Contact } from "../types";
 import { Link } from "react-router-dom";
+import EmptyList from "./EmptyList";
 
 const ContactList: React.FC = () => {
   const contacts = useSelector((state: RootState) => state.contact.contacts);
@@ -42,71 +43,76 @@ const ContactList: React.FC = () => {
           </button>
         </Link>
       </div>
-      <ul
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-between",
-          gap: "20px",
-          padding: "0px 25px 25px",
-        }}
-      >
-        {contacts.map((contact: Contact) => (
-          <li
-            key={contact.id}
+      <div style={{display:'flex'}}>
+        {contacts.length === 0 ? (
+          <EmptyList />
+        ) : (
+          <ul
             style={{
               display: "flex",
-              flexDirection: "column",
+              flexWrap: "wrap",
+              justifyContent: "space-between",
               gap: "20px",
-              alignItems: "center",
+              padding: "0px 25px 25px",
             }}
           >
-            <div
-              style={{
-                border: "2px solid black",
-                backgroundColor: "white",
-                minWidth: "140px",
-                minHeight: "70px",
-                padding: "15px",
-              }}
-            >
-              <div>
-                {contact.firstName} {contact.lastName}
-              </div>
-              <div>{contact.status}</div>
-            </div>
-            <Link to={`/edit/${contact.id}`}>
-              <button
+            {contacts.map((contact: Contact) => (
+              <li
+                key={contact.id}
                 style={{
-                  border: "2px solid #a4a8a1",
-                  borderRadius: "5px",
-                  padding: "8px",
-                  width: "90px",
-                  // boxSizing: "border-box",
-                  color: "white",
-                  background: "linear-gradient(to top, #70a04e, transparent)",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "20px",
+                  alignItems: "center",
                 }}
               >
-                Edit
-              </button>
-            </Link>
-            <button
-              onClick={() => handleDelete(contact.id)}
-              style={{
-                border: "2px solid #a4a8a1",
-                borderRadius: "5px",
-                padding: "8px",
-                width: "90px",
-                // boxSizing: "border-box",
-                color: "white",
-                background: "linear-gradient(to top, #b64442, transparent)",
-              }}
-            >
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul>
+                <div
+                  style={{
+                    border: "2px solid black",
+                    backgroundColor: "white",
+                    minWidth: "140px",
+                    minHeight: "70px",
+                    padding: "15px",
+                  }}
+                >
+                  <div>
+                    {contact.firstName} {contact.lastName}
+                  </div>
+                  <div>{contact.status}</div>
+                </div>
+                <Link to={`/edit/${contact.id}`}>
+                  <button
+                    style={{
+                      border: "2px solid #a4a8a1",
+                      borderRadius: "5px",
+                      padding: "8px",
+                      width: "90px",
+                      color: "white",
+                      background:
+                        "linear-gradient(to top, #70a04e, transparent)",
+                    }}
+                  >
+                    Edit
+                  </button>
+                </Link>
+                <button
+                  onClick={() => handleDelete(contact.id)}
+                  style={{
+                    border: "2px solid #a4a8a1",
+                    borderRadius: "5px",
+                    padding: "8px",
+                    width: "90px",
+                    color: "white",
+                    background: "linear-gradient(to top, #b64442, transparent)",
+                  }}
+                >
+                  Delete
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   );
 };
